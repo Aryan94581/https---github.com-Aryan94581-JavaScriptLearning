@@ -5,7 +5,7 @@ var log = {
     console.log("info: " + info);
   },
   warning: function (warinig) {
-    console.log("warning: " + warning);
+    console.log("warning : " + warning);
   },
   error: function (error) {
     console.log("Error: " + error);
