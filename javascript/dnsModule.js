@@ -6,3 +6,4 @@ const website = "www.poornima.edu.in";
 dns.lookup(website, (err, address, family) => {
   console.log("Address of %s is %j family:IPv%s", website, address, family);
 });
+

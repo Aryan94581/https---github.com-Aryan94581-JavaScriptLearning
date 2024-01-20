@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "capitalize": "^2.0.4"
+    "capitalize": "^2.0.4",
+    "fs": "^0.0.1-security"
   }
 }
