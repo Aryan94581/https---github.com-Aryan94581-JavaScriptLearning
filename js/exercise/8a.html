@@ -7,16 +7,31 @@
   </head>
   <body>
     <script>
-      const object1 = {
+      const product1 = {
         name: "BasketBall",
         price: 2095,
       };
-      console.log(object1);
 
-      object1.price = 2095 + 500;
-      console.log(object1.price);
-      object1["delivery-time"] = "3 days";
-      console.log(object1);
+      const product2 = {
+        name: "FootBall",
+        price: 1000,
+      };
+      console.log(product1);
+
+      product1.price = 2095 + 500;
+      console.log(product1.price);
+      product1["delivery-time"] = "3 days";
+      console.log(product1);
+
+      function ComparePrice(item1, item2) {
+        if (item1.price > item2.price) {
+          console.log(item2.price);
+        } else {
+          console.log(item1.price);
+        }
+      }
+
+      ComparePrice(product1, product2);
     </script>
   </body>
 </html>
