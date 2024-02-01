@@ -69,10 +69,7 @@
             result = "tie";
           }
           scoreboard();
-          alert(
-            `you chose ${PlayerMove}. Computer chose ${computerMove}. ${result}
-wins = ${score.wins}  loose = ${score.loose} tie = ${score.ties}`
-          );
+          
         } else if (PlayerMove === "paper") {
           pickComputerChoice();
 
@@ -84,10 +81,7 @@ wins = ${score.wins}  loose = ${score.loose} tie = ${score.ties}`
             result = "loose";
           }
           scoreboard();
-          alert(
-            `you chose ${PlayerMove}. Computer chose ${computerMove}. ${result}
-wins = ${score.wins}  loose = ${score.loose} tie = ${score.ties}`
-          );
+          
         } else if (PlayerMove === "rock") {
           pickComputerChoice();
 
@@ -99,12 +93,12 @@ wins = ${score.wins}  loose = ${score.loose} tie = ${score.ties}`
             result = "win";
           }
           scoreboard();
-          alert(
+          
+        }
+        alert(
             `you chose ${PlayerMove}. Computer chose ${computerMove}. ${result}
               wins = ${score.wins}  loose = ${score.loose} tie = ${score.ties}`
           );
-        }
-
         localStorage.setItem("score", JSON.stringify(score));
       }
       let computerMove = "";

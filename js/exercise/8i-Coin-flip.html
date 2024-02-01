@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coin flip</title>
+  </head>
+  <body>
+    <button onclick=" playGame('Heads')">heads</button>
+    <button onclick=" playGame('Tails')">Tails</button>
+    <button
+      onclick="
+    score.wins= 0 ;
+    score.loses= 0 ;
+    localStorage.removeItem('score');"
+    >
+      Reset Score
+    </button>
+
+    <script>
+      let computerMove = " ";
+      let result = " ";
+      const score = JSON.parse(localStorage.getItem("score")) || {
+        wins: 0,
+        loses: 0,
+      };
+      function computerChoice() {
+        randomNumber = Math.random();
+
+        if (randomNumber >= 0 && randomNumber < 1 / 2) {
+          computerMove = "Heads";
+        } else if (randomNumber >= 1 / 2 && randomNumber < 1) {
+          computerMove = "Tails";
+        }
+      }
+
+      function playGame(PlayerMove) {
+        if (PlayerMove === "Heads") {
+          computerChoice();
+          if (PlayerMove === computerMove) {
+            result = "you Win!";
+          } else {
+            result = "you Loose!";
+          }
+        } else if (PlayerMove === "Tails") {
+          computerChoice();
+          if (PlayerMove === computerMove) {
+            result = "you Win!";
+          } else {
+            result = "you Loose!";
+          }
+        }
+        if (result === "you Win!") {
+          score.wins += 1;
+        } else {
+          score.loses += 1;
+        }
+        alert(`you chose ${PlayerMove}, ${result}
+        Wins! = ${score.wins}, Looses! = ${score.loses}`);
+
+        localStorage.setItem("score", JSON.stringify(score));
+      }
+    </script>
+  </body>
+</html>
