@@ -1,9 +1,8 @@
-const fs = require("fs");
+var fs = require("fs");
 
-fs.readFile("file.txt", "utf8", (err, data) => {
+fs.readFile("file.txt", function (err, data) {
   if (err) {
-    console.error("Error rad file :", err);
-  } else {
-    console.log("file content:", data);
+    return console.error(err);
   }
+  console.log("file content:", data.toString());
 });
