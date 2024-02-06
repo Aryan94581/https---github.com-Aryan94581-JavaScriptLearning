@@ -9,8 +9,14 @@
         border: none;
         background-color: black;
         color: white;
-        padding: 10px;
-        border-radius: 30px;
+        padding: 10px 15px;
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .sub-btn-clicked {
+        background-color: rgb(240, 240, 240);
+        color: black;
       }
     </style>
   </head>
@@ -23,8 +29,10 @@
         let subBtn = document.querySelector(".subscribe-btn");
         if (subBtn.innerHTML === "Subscribe") {
           subBtn.innerHTML = "Subscribed";
+          subBtn.classList.add("sub-btn-clicked");
         } else {
           subBtn.innerHTML = "Subscribe";
+          subBtn.classList.remove("sub-btn-clicked");
         }
       }
     </script>
