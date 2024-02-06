@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>subscribe</title>
+    <style>
+      .subscribe-btn {
+        border: none;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border-radius: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Please Subscribe my youtuber Chennel</p>
+    <button onclick="subscribe();" class="subscribe-btn">Subscribe</button>
+
+    <script>
+      function subscribe() {
+        let subBtn = document.querySelector(".subscribe-btn");
+        if (subBtn.innerHTML === "Subscribe") {
+          subBtn.innerHTML = "Subscribed";
+        } else {
+          subBtn.innerHTML = "Subscribe";
+        }
+      }
+    </script>
+  </body>
+</html>
