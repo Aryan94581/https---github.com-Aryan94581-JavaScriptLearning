@@ -4,32 +4,78 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>rock paper scissors</title>
+    <style>
+      body {
+        background-color: rgb(25, 25, 25);
+        color: white;
+        font-family: Arial;
+      }
+      .title {
+        font-size: 2rem;
+      }
+      .Move-btn {
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        border: 3px solid white;
+        background-color: transparent;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      .img {
+        overflow-clip-margin: content-box;
+        overflow-y: "";
+        overflow-y: "";
+      }
+      .Move-img {
+        height: 50px;
+      }
+      .result-p {
+        font-size: 25px;
+        font-weight: bold;
+        margin-top: 35px;
+      }
+      .compairMoves img {
+        height: 50px;
+      }
+      .Score-p {
+        margin-bottom: 35px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Rock paper scissors</h1>
+    <h1 class="title">Rock paper scissors</h1>
     <button
+      class="Move-btn"
       onclick="
      playGame('rock');
     "
     >
-      rock
+      <img src="./rock-emoji.png" alt="Rock" class="Move-img" />
     </button>
     <button
+      class="Move-btn"
       onclick="
     playGame('paper');
     "
     >
-      paper
+      <img src="./paper-emoji.png" alt="paper" class="Move-img" />
     </button>
     <button
+      class="Move-btn"
       onclick="
     playGame('scissors');
    "
     >
-      scissors
+      <img src="./scissors-emoji.png" alt="scissors" class="Move-img" />
     </button>
     <p class="result-p"></p>
-    <p class="compairMoves"></p>
+    <p class="compairMoves">
+      your
+      <img src="rock-emoji.png" class="Move-img" />
+      <img src="rock-emoji.png" class="Move-img" />
+      computer
+    </p>
     <p class="Score-p"></p>
     <button
       onclick="
@@ -60,7 +106,6 @@
 
       displayResult();
       Result_p();
-      CompairMove();
 
       function playGame(PlayerMove) {
         if (PlayerMove === "scissors") {
@@ -129,11 +174,11 @@
         document.querySelector(".result-p").innerHTML = `Its a ${result}`;
       }
 
-      function CompairMove(PlayerMove) {
-        document.querySelector(
-          ".compairMoves"
-        ).innerHTML = `your Move { ${PlayerMove} } and computer's Move { ${computerMove} } `;
-      }
+      //  function CompairMove(PlayerMove) {
+      //   document.querySelector(
+      //     ".compairMoves"
+      //   ).innerHTML = `your Move { ${PlayerMove} } and computer's Move { ${computerMove} } `;
+      // }
 
       function Resetvalues() {
         score.wins = 0;
@@ -142,7 +187,6 @@
         localStorage.removeItem("score");
         displayResult();
         Result_p();
-        CompairMove();
       }
     </script>
   </body>
