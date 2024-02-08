@@ -8,37 +8,52 @@
       button {
         padding: 10px;
         border: none;
+        background-color: rgb(223, 223, 223);
         border-radius: 4px;
-        background-color: black;
-        color: white;
+        color: black;
       }
       .btn {
-        background-color: rgb(223, 223, 223);
+        background-color: black;
+        color: white;
       }
     </style>
   </head>
   <body>
     <button
       onclick="
-        document.querySelector('.Gaming').classList.toggle('btn');"
+        on_of ('.Gaming')"
       class="Gaming"
     >
       Gaming
     </button>
     <button
       onclick="
-        document.querySelector('.Music').classList.toggle('btn');"
+        on_of ('.Music') "
       class="Music"
     >
       Music
     </button>
     <button
       onclick="
-        document.querySelector('.tech').classList.toggle('btn');"
-      class="tech"
+        on_of ('.Tech');"
+      class="Tech"
     >
       Tech
     </button>
   </body>
-  
+  <script>
+    function on_of(selector) {
+      let buttons = document.querySelectorAll("button");
+      buttons.forEach((button) => {
+        if (
+          button.classList.contains("btn") &&
+          button.className !== selector.slice(1)
+        ) {
+          button.classList.remove("btn");
+        }
+      });
+      let button = document.querySelector(selector);
+      button.classList.toggle("btn");
+    }
+  </script>
 </html>
