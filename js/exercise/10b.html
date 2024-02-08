@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise</title>
+    <style>
+      button {
+        padding: 10px 15px;
+        font-size: 20px;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        border: none;
+      }
+      .btn-after {
+        background-color: rgb(230, 230, 230);
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn" onclick="btn_click();">Request now</button>
+  </body>
+  <script>
+    function btn_click() {
+      const btn = document.querySelector(".btn").innerHTML;
+      if (btn === "Request now") {
+        document.querySelector(".btn").classList.add("btn-after");
+        document.querySelector(".btn").innerHTML = "Schedule for later";
+      } else {
+        document.querySelector(".btn").innerHTML = "Request now";
+        document.querySelector(".btn").classList.remove("btn-after");
+      }
+    }
+  </script>
+</html>
